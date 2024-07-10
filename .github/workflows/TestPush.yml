@@ -19,8 +19,11 @@ jobs:
     env:
       VERSION: ${{ needs.CalculateVersion.outputs.version }}
       GITHUB_SHA: ${{ github.sha }}
+      GITHUB_NEW_ACTOR: ${GITHUB_ACTOR}
     steps:
       - name: Output Version
         run: echo $VERSION
       - name: Output Github SHA
         run: echo $GITHUB_SHA
+      - name: Output Github Actor
+        run: echo $GITHUB_NEW_ACTOR
