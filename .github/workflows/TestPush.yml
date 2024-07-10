@@ -6,7 +6,12 @@ on:
 name: Test Push and Environment Variables
 jobs:
   CalculateVersion:
-    uses: "./.github/actions/calculate-version.yml"
+    outputs:
+      version: ${{ steps.calculate_version.version }}
+    steps:
+      - uses: checkout@v4
+      - id: calculate_version
+        uses: "./.github/actions/calculate-version.yml"
   Launch:
     needs: [CalculateVersion]
     env:
