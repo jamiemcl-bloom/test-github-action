@@ -1,6 +1,8 @@
 name: Calculate VERSION
 outputs:
-  version: ${{ steps.calculate_version.outputs.VERSION }}
+  version:
+    description: The reusable version number
+    value: ${{ steps.calculate_version.outputs.VERSION }}
 runs:
   using: composite
   steps:
