@@ -7,4 +7,5 @@ runs:
   using: composite
   steps:
     - id: calculate_version
+      shell: bash
       run: echo VERSION=${{ github.event.repository.updated_at }} | sed -r 's/:/-/g' >> $GITHUB_OUTPUT
