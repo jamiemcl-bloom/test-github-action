@@ -9,7 +9,7 @@ jobs:
     outputs:
       version: ${{ steps.calculate_version.version }}
     steps:
-      - uses: checkout@v4
+      - uses: actions/checkout@v4
       - id: calculate_version
         uses: "./.github/actions/calculate-version.yml"
   Launch:
