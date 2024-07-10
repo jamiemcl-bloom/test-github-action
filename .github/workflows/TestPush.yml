@@ -1,12 +1,12 @@
 on:
   push:
     branches:
-      - *
+      - "*"
 
 name: Test Push and Environment Variables
 jobs:
   CalculateVersion:
-    uses: './.github/actions/calculate-version.yml'
+    uses: "./.github/actions/calculate-version.yml"
   Launch:
     needs: [CalculateVersion]
     env:
