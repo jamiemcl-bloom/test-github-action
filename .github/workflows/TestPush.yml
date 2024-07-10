@@ -23,4 +23,4 @@ jobs:
       - name: Output Version
         run: echo $VERSION
       - name: Output Github SHA
-        run: ech $GITHUB_SHA
+        run: echo $GITHUB_SHA
