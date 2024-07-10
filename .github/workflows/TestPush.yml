@@ -6,6 +6,7 @@ on:
 name: Test Push and Environment Variables
 jobs:
   CalculateVersion:
+    runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.calculate_version.version }}
     steps:
@@ -13,6 +14,7 @@ jobs:
       - id: calculate_version
         uses: "./.github/actions/calculate-version.yml"
   Launch:
+    runs-on: ubuntu-latest
     needs: [CalculateVersion]
     env:
       VERSION: ${{ needs.CalculateVersion.outputs.version }}
