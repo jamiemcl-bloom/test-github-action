@@ -1,0 +1,19 @@
+on:
+  push:
+    branches:
+      - *
+
+name: Test Push and Environment Variables
+jobs:
+  CalculateVersion:
+    uses: './.github/actions/calculate-version.yml'
+  Launch:
+    needs: [CalculateVersion]
+    env:
+      VERSION: ${{ needs.CalculateVersion.outputs.version }}
+      GITHUB_SHA: ${{ github.sha }}
+    steps:
+      - name: Output Version
+        run: echo $VERSION
+      - name: Output Github SHA
+        run: ech $GITHUB_SHA

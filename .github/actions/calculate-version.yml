@@ -1,0 +1,8 @@
+name: Calculate VERSION
+outputs:
+  version: ${{ steps.calculate_version.outputs.VERSION }}
+runs:
+  using: composite
+  steps:
+    - id: calculate_version
+      run: echo VERSION=${{ github.event.repository.updated_at }} | sed -r 's/:/-/g' >> $GITHUB_OUTPUT
