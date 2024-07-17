@@ -1,0 +1,12 @@
+on:
+  push:
+    branches:
+      - "*"
+
+name: Test Github Version
+jobs:
+  TestGithubVersion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash ./scripts/is_github_actions_value_set.sh
