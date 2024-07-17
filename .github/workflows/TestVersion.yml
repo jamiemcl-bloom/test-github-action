@@ -1,0 +1,12 @@
+on:
+  push:
+    branches:
+      - "*"
+
+name: Github Version
+jobs:
+  TestVersion:
+    name: Test Version
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo $GITHUB_REF
