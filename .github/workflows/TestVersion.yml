@@ -6,7 +6,14 @@ on:
 name: Github Version
 jobs:
   TestVersion:
+    env:
+      GIT_BRANCH_RESOLVED: ${GITHUB_REF_NAME}
+      GIT_BRANCH_RESOLVED_2: $GITHUB_REF_NAME
     name: Test Version
     runs-on: ubuntu-latest
     steps:
       - run: echo $GITHUB_REF_NAME
+      - run: echo $GIT_BRANCH_RESOLVED
+      - run: echo $GIT_BRANCH_RESOLVED_2
+      - run: echo ${GIT_BRANCH_RESOLVED}
+      - run: echo ${GIT_BRANCH_RESOLVED_2}
