@@ -12,8 +12,17 @@ jobs:
     name: Test Version
     runs-on: ubuntu-latest
     steps:
+      - run: echo "GIT_BRANCH_RESOLVED_3=${{ env.GITHUB_REF_NAME }}" >> $GITHUB_ENV
+      - run: echo GIT_BRANCH_RESOLVED_4=${GITHUB_REF_NAME} >> $GITHUB_ENV
+      - run: echo GIT_BRANCH_RESOLVED_5=$GITHUB_REF_NAME >> $GITHUB_ENV
       - run: echo $GITHUB_REF_NAME
       - run: echo $GIT_BRANCH_RESOLVED
       - run: echo $GIT_BRANCH_RESOLVED_2
+      - run: echo $GIT_BRANCH_RESOLVED_3
+      - run: echo $GIT_BRANCH_RESOLVED_4
+      - run: echo $GIT_BRANCH_RESOLVED_5
       - run: echo ${GIT_BRANCH_RESOLVED}
       - run: echo ${GIT_BRANCH_RESOLVED_2}
+      - run: echo ${GIT_BRANCH_RESOLVED_3}
+      - run: echo ${GIT_BRANCH_RESOLVED_4}
+      - run: echo ${GIT_BRANCH_RESOLVED_5}
